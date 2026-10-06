@@ -26,6 +26,8 @@ transcrip_kuliah/
 ├── mata_kuliah/                    # Folder catatan perkuliahan per mata kuliah
 ├── bimbingan_tesis/                # Log pertemuan & revisi naskah tesis
 ├── scripts/
+│   ├── tactiq_mcp_client.py        # Klien CLI mandiri untuk memanggil Tactiq MCP (list, search, get)
+│   ├── compile_lecture_transcript.py # Kompilasi PDF Tactiq + VTT Zoom ke catatan kuliah ber-slide
 │   └── process_transcript.py       # Skrip pembantu pemrosesan berkas mentah
 └── README.md                       # Dokumentasi utama
 ```
