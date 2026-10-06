@@ -2,8 +2,9 @@
   "$schema": "https://json.schemastore.org/mcp-config.json",
   "mcpServers": {
     "tactiq": {
-      "httpUrl": "https://mcp.tactiq.io",
-      "url": "https://mcp.tactiq.io"
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.tactiq.io"],
+      "description": "Tactiq MCP Server for fetching meeting notes and lecture transcripts"
     }
   }
 }
