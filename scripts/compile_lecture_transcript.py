@@ -364,7 +364,7 @@ SLIDE_TITLES = {
 }
 
 
-def build_markdown(meta, aligned_slides, vtt_cues, assets_rel_dir, output_path, lecture_date):
+def build_markdown(meta, aligned_slides, vtt_cues, assets_rel_dir, output_path, lecture_date, subject="II5005 Sains Data", topic="Exploratory Data Analysis: Statistik Deskriptif secara Numerik", lecturer="Dr. Lenny Putri Yulianti, S.T., M.T."):
     """
     Menyusun dokumen Markdown catatan kuliah lengkap dan menyimpannya.
     """
@@ -372,13 +372,13 @@ def build_markdown(meta, aligned_slides, vtt_cues, assets_rel_dir, output_path, 
     total_slides = len(aligned_slides)
 
     doc_lines = []
-    doc_lines.append("# Catatan Kuliah: II5005 Sains Data")
-    doc_lines.append("## W05 Exploratory Data Analysis: Statistik Deskriptif secara Numerik\n")
+    doc_lines.append(f"# Catatan Kuliah: {subject}")
+    doc_lines.append(f"## {topic}\n")
 
     doc_lines.append("### Informasi Perkuliahan")
-    doc_lines.append("- **Mata Kuliah:** II5005 Sains Data (S2 Rekayasa Perangkat Lunak / Magister Terapan)")
-    doc_lines.append("- **Topik:** Exploratory Data Analysis (EDA) - Statistik Deskriptif secara Numerik & Visualisasi")
-    doc_lines.append("- **Dosen Pengampu:** Dr. Lenny Putri Yulianti, S.T., M.T.")
+    doc_lines.append(f"- **Mata Kuliah:** {subject}")
+    doc_lines.append(f"- **Topik:** {topic}")
+    doc_lines.append(f"- **Dosen Pengampu:** {lecturer}")
     doc_lines.append(f"- **Waktu / Tanggal:** {lecture_date}")
     doc_lines.append("- **Durasi Sesi:** 134 Menit (~02:15:16)")
     doc_lines.append("- **Platform Pertemuan:** Zoom Meeting (Sinkronisasi Tactiq.io + Official Zoom Transcript)\n")
@@ -454,6 +454,9 @@ def main():
     parser.add_argument("-t", "--tactiq", required=True, help="Path ke file PDF transkrip Tactiq.io")
     parser.add_argument("-z", "--zoom", required=True, help="Path ke file transkrip resmi Zoom (.vtt)")
     parser.add_argument("-d", "--date", default=None, help="Tanggal kuliah (format YYYY-MM-DD). Jika kosong, dideteksi otomatis.")
+    parser.add_argument("--subject", default="II5005 Sains Data", help="Nama/Kode Mata Kuliah")
+    parser.add_argument("--topic", default="Exploratory Data Analysis: Statistik Deskriptif secara Numerik", help="Topik materi perkuliahan")
+    parser.add_argument("--lecturer", default="Dr. Lenny Putri Yulianti, S.T., M.T.", help="Nama dosen pengampu")
     parser.add_argument("-o", "--output", default=None, help="Path target file Markdown output (.md)")
     parser.add_argument("--outdir", default=None, help="Direktori induk (misal: 02_Materi_dan_Bahan_Ajar). Folder tanggal akan dibuat di dalamnya.")
     parser.add_argument("-a", "--assets-dir", default=None, help="Direktori penyimpanan screenshot slide")
@@ -518,7 +521,7 @@ def main():
     print(f"      -> Berhasil menyinkronkan {len(aligned_slides)} slide dengan transkrip resmi.")
 
     print(f"[4/4] Membangun dokumen catatan kuliah Markdown di {target_folder}...")
-    build_markdown(meta, aligned_slides, vtt_cues, assets_rel_dir, output_path, lecture_date)
+    build_markdown(meta, aligned_slides, vtt_cues, assets_rel_dir, output_path, lecture_date, subject=args.subject, topic=args.topic, lecturer=args.lecturer)
     print("Selesai! Seluruh file berhasil disusun rapi di folder tanggal.")
 
 

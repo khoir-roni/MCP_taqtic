@@ -22,13 +22,16 @@ Tactiq merekam dan mentranskripsi sesi perkuliahan daring (Google Meet, Zoom, MS
 4. Tactiq menggunakan **Browser-based OAuth**, sehingga Anda **tidak memerlukan API Key statis**. Saat pertama kali diakses, browser akan otomatis membuka prompt persetujuan login.
 
 ### Langkah B: File Konfigurasi MCP Workspace
-File [mcp_config.json](../mcp_config.json) di direktori ini sudah disetel:
+File [mcp_config.json](../mcp_config.json) dan [.gemini/settings.json](../.gemini/settings.json) di direktori ini sudah disetel menggunakan bridge `mcp-remote`:
 
 ```json
 {
+  "$schema": "https://json.schemastore.org/mcp-config.json",
   "mcpServers": {
     "tactiq": {
-      "url": "https://mcp.tactiq.io"
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.tactiq.io"],
+      "description": "Tactiq MCP Server for fetching meeting notes and lecture transcripts"
     }
   }
 }

@@ -8,7 +8,7 @@ Repositori ini adalah ruang kerja terstruktur untuk mengelola transkrip perkulia
 
 Saat kuliah S2 atau bimbingan tesis secara daring:
 1. **Perekaman Otomatis**: **Tactiq** merekam audio Google Meet / Zoom / MS Teams dan mengubahnya menjadi teks transkrip di cloud Tactiq.
-2. **Jembatan Terstandar (MCP)**: **MCP Server** (`https://mcp.tactiq.io/mcp`) membuka gerbang aman agar AI Assistant dapat mengakses data perkuliahan tersebut secara langsung.
+2. **Jembatan Terstandar (MCP)**: **MCP Server** (`https://mcp.tactiq.io`) membuka gerbang aman agar AI Assistant dapat mengakses data perkuliahan tersebut secara langsung.
 3. **Analisis Akademik Mendalam**: Anda tidak perlu menyalin ribuan kata manual. AI langsung mengambil teks dari Tactiq, menganalisis teori dan metodologi riset, menyusun rangkuman perkuliahan berstandar S2, serta memetakan daftar revisi dari dosen pembimbing.
 
 ---
@@ -17,7 +17,9 @@ Saat kuliah S2 atau bimbingan tesis secara daring:
 
 ```
 transcrip_kuliah/
-├── mcp_config.json                 # Konfigurasi koneksi Tactiq MCP Server
+├── .gemini/
+│   └── settings.json               # Konfigurasi workspace MCP untuk Gemini / Antigravity CLI
+├── mcp_config.json                 # Konfigurasi koneksi Tactiq MCP Server (standar klien umum)
 ├── config/
 │   └── mcp_tactiq_setup.md         # Panduan detail autentikasi & aktivasi MCP
 ├── templates/
