@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "tactiq": {
+      "httpUrl": "https://mcp.tactiq.io",
+      "url": "https://mcp.tactiq.io"
+    }
+  }
+}
