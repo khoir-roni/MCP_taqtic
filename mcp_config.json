@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "tactiq": {
+      "url": "https://mcp.tactiq.io",
+      "description": "Tactiq MCP Server for fetching meeting notes and lecture transcripts from Google Meet, Zoom, and MS Teams"
+    }
+  }
+}

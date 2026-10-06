@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Output & Raw Media
+screenshots/
+output_folder/
+*.pdf
+*.vtt
+*.srt
+
+# Sensitive & Environment
+.env
+*.token
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
